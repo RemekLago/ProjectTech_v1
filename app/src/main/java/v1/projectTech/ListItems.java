@@ -16,11 +16,6 @@ public class ListItems {
             this.item9 = item9;
         }
 
-    public ListItems(String item1, String item2) {
-        this.item1 = item1;
-        this.item2  = item2;
-    }
-
     public ListItems(String trim, String string, String string1, String string2) {
     }
 
