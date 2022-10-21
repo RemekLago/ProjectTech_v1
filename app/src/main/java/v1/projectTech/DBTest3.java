@@ -15,7 +15,7 @@ import java.sql.Statement;
 import java.sql.Types;
 import java.util.ArrayList;
 
-public class DBTest2 extends AsyncTask<String, Void, ArrayList<ArrayList>> {
+public class DBTest3 extends AsyncTask<String, Void, ArrayList<ArrayList>> {
 
     ArrayList<ArrayList> finalResult = new ArrayList<>();
 
@@ -38,12 +38,13 @@ public class DBTest2 extends AsyncTask<String, Void, ArrayList<ArrayList>> {
             CallableStatement callableStatement = connection.prepareCall("{call [CzyLiczbaParzysta](?,?,?,?,?,?)}");
             Log.i("laczenie", "CallableStatement: " + callableStatement.toString());
 
-            String id, rFirma = "700", userID = "0", liczba = "100";
+            int rFirma = 750, userID = 0;
+            String Barcode = "WYGPZ2201681|         1897 013 05|0,300|0|S300-2205||562105_1|749955|NEW|||124/A/05/22||||20.05.22|||||||";
 
 
-            callableStatement.setString("Firma", rFirma);
-            callableStatement.setString("UserId", userID);
-            callableStatement.setString("Liczba", liczba);
+            callableStatement.setInt("Firma", rFirma);
+            callableStatement.setInt("UserId", userID);
+            callableStatement.setString("Barcode", Barcode);
 
             callableStatement.registerOutParameter("rStatus", Types.INTEGER);
             callableStatement.registerOutParameter("rKomunikat", Types.VARCHAR);
@@ -72,12 +73,12 @@ public class DBTest2 extends AsyncTask<String, Void, ArrayList<ArrayList>> {
 //            }
 
 
-                callableStatement.close();
-                connection.close();
-            } catch(Exception e){
+            callableStatement.close();
+            connection.close();
+        } catch(Exception e){
 //            e.printStackTrace();
-                Log.i("laczenie", "exception " + e.toString());
-            }
-            return finalResult;
+            Log.i("laczenie", "exception " + e.toString());
         }
+        return finalResult;
     }
+}

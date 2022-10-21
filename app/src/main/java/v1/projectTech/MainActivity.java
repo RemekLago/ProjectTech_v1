@@ -38,17 +38,29 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        DBTest dbtest = new DBTest();
-        ArrayList<ArrayList> temp = dbtest.doInBackground();
+//        DBTest dbtest = new DBTest();
+//        ArrayList<ArrayList> temp = dbtest.doInBackground();
+//
+//        Log.i("laczenie", "url adress: " + URL);
+//
+//        TextView textView1 = findViewById(R.id.textView1);
+//        TextView textView2 = findViewById(R.id.textView2);
+//
+//        textView1.setText((CharSequence) temp.get(0).get(0));
+//        textView2.setText((CharSequence) temp.get(1).get(0));
 
-        Log.i("laczenie", "url adress: " + URL.toString());
+        DBTest2 dbtest2 = new DBTest2();
+        ArrayList<ArrayList> temp2 = dbtest2.doInBackground();
 
-        TextView textView1 = findViewById(R.id.textView1);
-        TextView textView2 = findViewById(R.id.textView2);
-//        Log.i("laczenie", "url adress: " + tempItemList.);
-//        Log.i("laczenie", "url adress: " + tempItemList.g);
-        textView1.setText((CharSequence) temp.get(0).get(0));
-        textView2.setText((CharSequence) temp.get(1).get(0));
+        Log.i("laczenie", "url adress: " + URL);
+
+        TextView textView3 = findViewById(R.id.textView3);
+        TextView textView4 = findViewById(R.id.textView4);
+
+        textView3.setText((CharSequence) temp2.get(0).get(0));
+        textView4.setText((CharSequence) temp2.get(1).get(0));
+
+
     }
 
 }

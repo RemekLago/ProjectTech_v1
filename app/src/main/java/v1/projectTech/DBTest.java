@@ -37,13 +37,14 @@ public class DBTest extends AsyncTask<String, Void, ArrayList<ArrayList>> {
             String id, rFirma = "750", userID = "0";
             int Koniec = 4;
 
-//            callableStatement.registerOutParameter(1, Types.VARCHAR);
-//            callableStatement.registerOutParameter(2, Types.VARCHAR);
-//            callableStatement.registerOutParameter(2, Types.VARCHAR);
-
             callableStatement.setString("Firma", rFirma);
             callableStatement.setString("UserId", userID);
             callableStatement.setInt("Koniec", Koniec);
+
+
+//            callableStatement.registerOutParameter(1, Types.VARCHAR);
+//            callableStatement.registerOutParameter(2, Types.VARCHAR);
+//            callableStatement.registerOutParameter(2, Types.VARCHAR);
 
 
             ResultSet rs = callableStatement.executeQuery();
