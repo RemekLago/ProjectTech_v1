@@ -23,12 +23,12 @@ public class DBTest2 extends AsyncTask<String, Void, ArrayList<ArrayList>> {
     protected ArrayList<ArrayList> doInBackground(String... strings) {
 
         try {
-            String user = "MobiTech",
-                    pass = "M0b1T3ch",
-                    db = "MobiTech",
-                    ip = "192.168.1.41",
-                    port = "51558";
-            String URL = "jdbc:jtds:sqlserver://" + ip + ":" + port + "/" + db;
+            String user = Pass.user,
+                    pass = Pass.pass,
+                    db = Pass.db,
+                    ip = Pass.ip,
+                    port = Pass.port;
+            String URL = Pass.URL;
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
             Connection connection = DriverManager.getConnection(URL, user, pass);
