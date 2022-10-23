@@ -49,27 +49,29 @@ public class DBTest2 extends AsyncTask<String, Void, ArrayList<ArrayList>> {
             callableStatement.registerOutParameter("rKomunikat", Types.VARCHAR);
             callableStatement.registerOutParameter("rCzyParzysta", Types.VARCHAR);
 
-//            ResultSet rs = callableStatement.executeQuery();
-            int rs = callableStatement.executeUpdate();
-            Log.i("laczenie", "rs = " + rs);
+            ResultSet rs = callableStatement.executeQuery();
+//            int rs = callableStatement.executeUpdate();
+//            Log.i("laczenie", "rs = " + rs);
 
-            callableStatement.executeUpdate();
 
-//            while (rs.next()) {
-//                String pozycja = rs.getString("Pozycja").trim();
-//                String nazwapozycja = rs.getString("PozycjaNazwa").trim();
-//                ArrayList<Object> tmpReckord = new ArrayList();
-//                tmpReckord.add(pozycja);
-//                tmpReckord.add(nazwapozycja);
-//
-//                Log.i("laczenie", "ArrayLisy(pozycja): " + tmpReckord.get(0));
-//                Log.i("laczenie", "ArrayList(nazwapozycja): " + tmpReckord.get(1));
-//
-//                finalResult.add(tmpReckord);
-//
-//                Log.i("laczenie", "HashMap:" + finalResult.get(0).get(0));
-//          Log.i("laczenie", "HashMap:" + finalResult.get(0).get(1));
-//            }
+            while (rs.next()) {
+                String status = rs.getString("rStatus").trim();
+                String komunikat = rs.getString("rKomunikat").trim();
+                String czyparzysta = rs.getString("rCzyParzysta").trim();
+                ArrayList<Object> tmpReckord = new ArrayList();
+                tmpReckord.add(status);
+                tmpReckord.add(komunikat);
+                tmpReckord.add(czyparzysta);
+
+                Log.i("laczenie", "ArrayLisy(status): " + tmpReckord.get(0));
+                Log.i("laczenie", "ArrayList(komunikat): " + tmpReckord.get(1));
+                Log.i("laczenie", "ArrayList(czyparzysta): " + tmpReckord.get(2));
+
+                finalResult.add(tmpReckord);
+
+                Log.i("laczenie", "HashMap:" + finalResult.get(0).get(0));
+          Log.i("laczenie", "HashMap:" + finalResult.get(0).get(1));
+            }
 
 
                 callableStatement.close();
