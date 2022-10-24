@@ -35,44 +35,30 @@ public class DBTest2 extends AsyncTask<String, Void, ArrayList<ArrayList>> {
             Log.i("laczenie", "Connected to: " + connection.toString());
 
 
-            CallableStatement callableStatement = connection.prepareCall("{call [CzyLiczbaParzysta](?,?,?,?,?,?)}");
+            CallableStatement callableStatement = connection.prepareCall(
+                    "{call [CzyLiczbaParzysta](?,?,?,?,?,?)}");
             Log.i("laczenie", "CallableStatement: " + callableStatement.toString());
 
             String id, rFirma = "700", userID = "0", liczba = "100";
-
+            String rStatus, rKomunikat, rCzyParzysta;
 
             callableStatement.setString("Firma", rFirma);
             callableStatement.setString("UserId", userID);
             callableStatement.setString("Liczba", liczba);
 
-            callableStatement.registerOutParameter("rStatus", Types.INTEGER);
-            callableStatement.registerOutParameter("rKomunikat", Types.VARCHAR);
-            callableStatement.registerOutParameter("rCzyParzysta", Types.VARCHAR);
 
-            ResultSet rs = callableStatement.executeQuery();
-//            int rs = callableStatement.executeUpdate();
-//            Log.i("laczenie", "rs = " + rs);
+            callableStatement.registerOutParameter("rStatus", java.sql.Types.INTEGER);
+            callableStatement.registerOutParameter("rKomunikat", java.sql.Types.VARCHAR);
+            callableStatement.registerOutParameter("rCzyParzysta", java.sql.Types.VARCHAR);
 
+            callableStatement.execute();
+            rStatus = callableStatement.getString("rStatus");
+            rKomunikat = callableStatement.getString("rKomunikat");
+            rCzyParzysta = callableStatement.getString("rCzyParzysta");
 
-            while (rs.next()) {
-                String status = rs.getString("rStatus").trim();
-                String komunikat = rs.getString("rKomunikat").trim();
-                String czyparzysta = rs.getString("rCzyParzysta").trim();
-                ArrayList<Object> tmpReckord = new ArrayList();
-                tmpReckord.add(status);
-                tmpReckord.add(komunikat);
-                tmpReckord.add(czyparzysta);
-
-                Log.i("laczenie", "ArrayLisy(status): " + tmpReckord.get(0));
-                Log.i("laczenie", "ArrayList(komunikat): " + tmpReckord.get(1));
-                Log.i("laczenie", "ArrayList(czyparzysta): " + tmpReckord.get(2));
-
-                finalResult.add(tmpReckord);
-
-                Log.i("laczenie", "HashMap:" + finalResult.get(0).get(0));
-          Log.i("laczenie", "HashMap:" + finalResult.get(0).get(1));
-            }
-
+            Log.i("laczenie", "rStatus: " + rStatus);
+            Log.i("laczenie", "rKomunikat: " + rKomunikat);
+            Log.i("laczenie", "rCzyParzysta: " + rCzyParzysta);
 
                 callableStatement.close();
                 connection.close();

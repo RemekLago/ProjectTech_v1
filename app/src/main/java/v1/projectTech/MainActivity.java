@@ -49,16 +49,31 @@ public class MainActivity extends AppCompatActivity {
 //        textView1.setText((CharSequence) temp.get(0).get(0));
 //        textView2.setText((CharSequence) temp.get(1).get(0));
 
-        DBTest2 dbtest2 = new DBTest2();
-        ArrayList<ArrayList> temp2 = dbtest2.doInBackground();
+//        DBTest2 dbtest2 = new DBTest2();
+//        ArrayList<ArrayList> temp2 = dbtest2.doInBackground();
+//
+//        Log.i("laczenie", "url adress: " + URL);
+//
+//        TextView textView3 = findViewById(R.id.textView3);
+//        TextView textView4 = findViewById(R.id.textView4);
+//
+//        textView3.setText((CharSequence) temp2.get(0).get(0));
+//        textView4.setText((CharSequence) temp2.get(1).get(0));
+
+        DBTest3 dbtest3 = new DBTest3();
+        ArrayList<ArrayList> temp3 = dbtest3.doInBackground();
 
         Log.i("laczenie", "url adress: " + URL);
 
-        TextView textView3 = findViewById(R.id.textView3);
-        TextView textView4 = findViewById(R.id.textView4);
+        TextView textView5 = findViewById(R.id.textView5);
+        TextView textView6 = findViewById(R.id.textView6);
+        TextView textView7 = findViewById(R.id.textView7);
+        TextView textView8 = findViewById(R.id.textView8);
 
-        textView3.setText((CharSequence) temp2.get(0).get(0));
-        textView4.setText((CharSequence) temp2.get(1).get(0));
+        textView5.setText(DBTest3.rStatus);
+        textView6.setText(DBTest3.rKomunikat);
+        textView7.setText(DBTest3.rPozycja);
+        textView8.setText(DBTest3.rPozycjaNazwa);
 
     }
 }
