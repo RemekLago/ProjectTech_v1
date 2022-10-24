@@ -1,6 +1,5 @@
 package v1.projectTech;
 
-import static v1.projectTech.DBTest3.rStatus;
 import static v1.projectTech.DBTest3.tmpInfo;
 
 import androidx.appcompat.app.AppCompatActivity;
