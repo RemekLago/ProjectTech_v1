@@ -1,5 +1,8 @@
 package v1.projectTech;
 
+import static v1.projectTech.DBTest3.rStatus;
+import static v1.projectTech.DBTest3.tmpInfo;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -70,10 +73,10 @@ public class MainActivity extends AppCompatActivity {
         TextView textView7 = findViewById(R.id.textView7);
         TextView textView8 = findViewById(R.id.textView8);
 
-        textView5.setText(DBTest3.rStatus);
-        textView6.setText(DBTest3.rKomunikat);
-        textView7.setText(DBTest3.rPozycja);
-        textView8.setText(DBTest3.rPozycjaNazwa);
+        textView5.setText(tmpInfo.get("Status"));
+        textView6.setText(tmpInfo.get("Komunikat"));
+        textView7.setText(tmpInfo.get("Pozycja"));
+        textView8.setText(tmpInfo.get("PozycjaNazwa"));
 
     }
 }
