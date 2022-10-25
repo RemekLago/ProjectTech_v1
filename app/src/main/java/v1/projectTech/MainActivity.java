@@ -1,14 +1,20 @@
 package v1.projectTech;
 
+
 import static v1.projectTech.DBTest3.tmpInfo;
+import static v1.projectTech.R.id.button1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.ViewAnimator;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
             ip = Pass.ip,
             port = Pass.port;
     String URL = Pass.URL;
-
-//    String QR_Code = "WYGPZ2201681|         1897 013 05|0,300|0|S300-2205||562105_1|749955|NEW|||124/A/05/22||||20.05.22|||||||";
 
     @SuppressLint("WrongThread")
     @Override
@@ -62,20 +66,16 @@ public class MainActivity extends AppCompatActivity {
 //        textView3.setText((CharSequence) temp2.get(0).get(0));
 //        textView4.setText((CharSequence) temp2.get(1).get(0));
 
-        DBTest3 dbtest3 = new DBTest3();
-        ArrayList<ArrayList> temp3 = dbtest3.doInBackground();
-
-        Log.i("laczenie", "url adress: " + URL);
-
-        TextView textView5 = findViewById(R.id.textView5);
-        TextView textView6 = findViewById(R.id.textView6);
-        TextView textView7 = findViewById(R.id.textView7);
-        TextView textView8 = findViewById(R.id.textView8);
-
-        textView5.setText(tmpInfo.get("Status"));
-        textView6.setText(tmpInfo.get("Komunikat"));
-        textView7.setText(tmpInfo.get("Pozycja"));
-        textView8.setText(tmpInfo.get("PozycjaNazwa"));
-
+        Button button1 = findViewById(R.id.button1);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openMainActivity2();
+            }
+        });
+    }
+    private void openMainActivity2() {
+        Intent intent = new Intent(this, MainActivity2.class);
+        startActivity(intent);
     }
 }
