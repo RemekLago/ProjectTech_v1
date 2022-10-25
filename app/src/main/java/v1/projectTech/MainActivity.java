@@ -20,13 +20,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
-    // Connection to database
-    String user = Pass.user,
-            pass = Pass.pass,
-            db = Pass.db,
-            ip = Pass.ip,
-            port = Pass.port;
-    String URL = Pass.URL;
 
     @SuppressLint("WrongThread")
     @Override
