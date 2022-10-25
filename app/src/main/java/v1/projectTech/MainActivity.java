@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 //
 //        textView1.setText((CharSequence) temp.get(0).get(0));
 //        textView2.setText((CharSequence) temp.get(1).get(0));
-
+//
 //        DBTest2 dbtest2 = new DBTest2();
 //        ArrayList<ArrayList> temp2 = dbtest2.doInBackground();
 //
