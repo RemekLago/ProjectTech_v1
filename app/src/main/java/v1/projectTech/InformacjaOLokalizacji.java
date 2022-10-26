@@ -69,17 +69,17 @@ public class InformacjaOLokalizacji {
                 finalResult.add(tmpReckord);
             }
 
-            Log.i("laczenie", "kolumny z tabeli: " + finalResult.get(0).toString());
-            Log.i("laczenie", "rekord z tabeli: " + finalResult.get(10).toString());
-            Log.i("laczenie", "rekord z tabeli: " + finalResult.get(20).toString());
-            Log.i("laczenie", "rekord z tabeli: " + finalResult.get(30).toString());
+//            Log.i("laczenie", "kolumny z tabeli: " + finalResult.get(0).toString());
+//            Log.i("laczenie", "rekord z tabeli: " + finalResult.get(10).toString());
+//            Log.i("laczenie", "rekord z tabeli: " + finalResult.get(20).toString());
+//            Log.i("laczenie", "rekord z tabeli: " + finalResult.get(30).toString());
 
             callableStatement.close();
             connection.close();
         } catch (Exception e) {
             Log.i("laczenie", "exception " + e.toString());
         }
-        Log.i("laczenie", "ColumnFinalResult: " + (finalResult.get(0).get(0).toString()).split("\\|")[1]);
+//        Log.i("laczenie", "ColumnFinalResult: " + (finalResult.get(0).get(0).toString()).split("\\|")[1]);
         return finalResult;
     }
 

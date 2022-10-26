@@ -52,10 +52,10 @@ public class InformacjeOPozycji {
             rPozycja = callableStatement.getString("rPozycja");
             rPozycjaNazwa = callableStatement.getString("rPozycjaNazwa");
 
-            Log.i("laczenie", "rStatus: " + rStatus);
-            Log.i("laczenie", "rKomunikat: " + rKomunikat);
-            Log.i("laczenie", "rPozycja: " + rPozycja);
-            Log.i("laczenie", "rPozycjaNazwa: " + rPozycjaNazwa);
+//            Log.i("laczenie", "rStatus: " + rStatus);
+//            Log.i("laczenie", "rKomunikat: " + rKomunikat);
+//            Log.i("laczenie", "rPozycja: " + rPozycja);
+//            Log.i("laczenie", "rPozycjaNazwa: " + rPozycjaNazwa);
 
             tmpHashMap.put("Status", rStatus);
             tmpHashMap.put("Komunikat", rKomunikat);
