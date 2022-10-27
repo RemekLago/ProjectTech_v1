@@ -66,9 +66,23 @@ public class MainActivity extends AppCompatActivity {
                 openMainActivity2();
             }
         });
+
+
+        Button button2 = findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openMainActivity3();
+            }
+        });
     }
     private void openMainActivity2() {
         Intent intent = new Intent(this, MainActivity2.class);
+        startActivity(intent);
+    }
+
+    private void openMainActivity3() {
+        Intent intent = new Intent(this, MainActivity3.class);
         startActivity(intent);
     }
 }
