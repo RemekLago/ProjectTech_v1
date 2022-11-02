@@ -17,6 +17,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     public static ArrayList<ArrayList> temp3;
     public static ArrayList<String> FinalListWithColumnsNames;
+    public static DBTest3 dbtest3 = new DBTest3();
 
     @SuppressLint({"WrongThread", "RtlHardcoded"})
     @Override
@@ -25,7 +26,7 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
 
-        DBTest3 dbtest3 = new DBTest3();
+
         ArrayList<ArrayList> temp3 = dbtest3.doInBackground();
         ArrayList<String> FinalListWithColumnsNames = dbtest3.columnsNames(temp3);
         ArrayList<Integer> FinalListWithColumnsWidth = dbtest3.columnsWidth(temp3);

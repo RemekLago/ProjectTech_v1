@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
+
 import java.util.ArrayList;
 
 public class MainActivity4 extends AppCompatActivity {
@@ -16,15 +18,44 @@ public class MainActivity4 extends AppCompatActivity {
     int numberOfRows = temp3.size();
     int numberOfColumns = InformacjaOLokalizacji.numberOfColumns;
     ArrayList<ArrayList> FinalListWithColumnsData = temp3;
+    ArrayList<String> FinalListWithColumnsNames = dbtest3.columnsNames(temp3);
+    ArrayList<Integer> FinalListWithColumnsWidth = dbtest3.columnsWidth(temp3);
+    ArrayList<Integer> FinalListWithColumnsAdjust = dbtest3.columnsAdjust(temp3);
+    ArrayList<String> FinalListWithCellsColor = dbtest3.cellsColor(temp3);
     ArrayList<ArrayList> data1;
+
+    ArrayList<ArrayList> addingNamesOfColumns() {
+
+    for (int i = 0; i < FinalListWithColumnsNames.size(); i ++) {
+        FinalListWithColumnsData.get(0).set(i, FinalListWithColumnsNames.get(i));
+    }
+
+    return FinalListWithColumnsData;
+    }
+
+    ArrayList<ArrayList> addingColorOfColumns(ArrayList<ArrayList> data) {
+        for (int i = 0; i < data.size()-1; i++) {
+            data.get(i).set(0, FinalListWithCellsColor.get(i));
+//            Log.i("laczenie", "dlugosc lista kolory " + FinalListWithCellsColor.get(i));
+//            Log.i("laczenie", "dlugosc lista kolory " +  data.get(i).get(0));
+        }
+        return FinalListWithColumnsData;
+    }
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
 
+
+
 //        data1 = new ArrayList<>();
-        data1 = FinalListWithColumnsData;
+//        data1 = FinalListWithColumnsDataWithMainNames;
+        ArrayList<ArrayList> data0 = addingNamesOfColumns();
+            data1 =         addingColorOfColumns(data0);
 
 //        ArrayList<String> row1 = new ArrayList<>();
 //        row1.add(0, "Ewa1");
@@ -64,6 +95,8 @@ public class MainActivity4 extends AppCompatActivity {
         AdapterRecyclerView adapterRecyclerView = new AdapterRecyclerView(this,data1);
         recyclerView1.setAdapter(adapterRecyclerView);
         recyclerView1.setLayoutManager(new LinearLayoutManager(this));
+
+
 
     }
 

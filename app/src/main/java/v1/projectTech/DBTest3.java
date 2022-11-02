@@ -42,48 +42,65 @@ public class DBTest3 extends AsyncTask<String, Void, ArrayList<ArrayList>> {
     }
 
     public ArrayList<String> columnsNames(ArrayList<ArrayList> reckords) {
-        for (int i = 0; i < numberOfColumns; i++) {
-            String tmpOneColumn = (reckords.get(0).get(i).toString()).split("\\|")[1];
+
+        try {
+            for (int i = 0; i < numberOfColumns; i++) {
+                String tmpOneColumn = (reckords.get(0).get(i).toString()).split("\\|")[1];
 //            Log.i("laczenie", "Column1: " + tmpOneColumn);
-            ListWithColumnsNames.add(tmpOneColumn);
+                ListWithColumnsNames.add(tmpOneColumn);
+            }
+        } catch(Exception e){
+            Log.i("laczenie", "exception " + e.toString());
         }
         return ListWithColumnsNames;
     }
 
     public ArrayList<Integer> columnsWidth(ArrayList<ArrayList> reckords) {
-        for (int i = 0; i < numberOfColumns; i++) {
-            String tmpOneColumn = (reckords.get(0).get(i).toString()).split("\\|")[2];
-            int tmpOneColumnInt = Integer.parseInt(tmpOneColumn);
+        try {
 
-            ListWithColumnsWidth.add(2 * tmpOneColumnInt);
+            for (int i = 0; i < numberOfColumns; i++) {
+                String tmpOneColumn = (reckords.get(0).get(i).toString()).split("\\|")[2];
+                int tmpOneColumnInt = Integer.parseInt(tmpOneColumn);
 
-            Log.i("laczenie", "dlugoŚć1: " + tmpOneColumn);
-            Log.i("laczenie", "dlugoŚć3: " + tmpOneColumnInt);
-        }
+                ListWithColumnsWidth.add(3 * tmpOneColumnInt);
+
+                Log.i("laczenie", "dlugoŚć1: " + tmpOneColumn);
+                Log.i("laczenie", "dlugoŚć3: " + tmpOneColumnInt);
+            }
 //            Log.i("laczenie", "parameterColumn2: " + tmpOneColumn);
+
+        } catch (Exception e) {
+            Log.i("laczenie", "exception " + e.toString());
+        }
         return ListWithColumnsWidth;
     }
 
     public ArrayList<Integer> columnsAdjust(ArrayList<ArrayList> reckords) {
         int tmpOneColumnInt;
-        for (int i = 0; i < numberOfColumns; i++) {
-            String tmpOneColumn = (reckords.get(0).get(i).toString()).split("\\|")[2];
+
+        try {
+            for (int i = 0; i < numberOfColumns; i++) {
+                String tmpOneColumn = (reckords.get(0).get(i).toString()).split("\\|")[2];
 //            Log.i("laczenie", "parameterColumn3: " + tmpOneColumn);
 
-            switch (tmpOneColumn) {
-                case "2":
-                    tmpOneColumnInt = 17; //CENTER
-                    break;
-                case "0":
-                    tmpOneColumnInt = 3; //LEFT
-                    break;
-                case "1":
-                    tmpOneColumnInt = 5; //RIGHT
-                    break;
-                default:
-                    tmpOneColumnInt = 0; //NO GRAVITY - NO ALIGNMENT
+                switch (tmpOneColumn) {
+                    case "2":
+                        tmpOneColumnInt = 17; //CENTER
+                        break;
+                    case "0":
+                        tmpOneColumnInt = 3; //LEFT
+                        break;
+                    case "1":
+                        tmpOneColumnInt = 5; //RIGHT
+                        break;
+                    default:
+                        tmpOneColumnInt = 0; //NO GRAVITY - NO ALIGNMENT
+                }
+                ListWithColumnsAdjust.add(tmpOneColumnInt);
             }
-            ListWithColumnsAdjust.add(tmpOneColumnInt);
+        }
+        catch(Exception e) {
+            Log.i("laczenie", "exception " + e.toString());
         }
         return ListWithColumnsAdjust;
     }
@@ -102,29 +119,32 @@ public class DBTest3 extends AsyncTask<String, Void, ArrayList<ArrayList>> {
 //    }
 
     public ArrayList<String > cellsColor(ArrayList<ArrayList> reckords) {
-        int numberOfRows = reckords.size() - 1;
+        try {
+            int numberOfRows = reckords.size() - 1;
+            for (int i = 1; i <= numberOfRows; i++) {
+                String[] tmpOneRowTable = reckords.get(i).get(0).toString().split(",");
+                String tmpOneRow = tmpOneRowTable[0] + "," + tmpOneRowTable[1] + "," + tmpOneRowTable[2];
+                Log.i("laczenie", "Data1: " + tmpOneRow);
+                switch (tmpOneRow) {
+                    case "255,255,255":
+                        tmpOneRow = "#FF0000"; //color RED
+                        break;
+                    case "255,000,000":
+                        tmpOneRow = "#E6E6E6"; //color GREY
+                        break;
+                    case "000,000,000":
+                        tmpOneRow = "#FFFFFFFF"; //color WHITE
+                        break;
+                    default:
+                        tmpOneRow = "#FFFFFFFF"; //color WHITE
+                }
 
-        for (int i = 1; i <= numberOfRows; i++) {
-            String[] tmpOneRowTable = reckords.get(i).get(0).toString().split(",");
-            String tmpOneRow = tmpOneRowTable[0]+","+tmpOneRowTable[1]+","+tmpOneRowTable[2];
-            Log.i("laczenie", "Data1: " + tmpOneRow);
-            switch (tmpOneRow) {
-                case "255,255,255":
-                    tmpOneRow = "#FF0000"; //color RED
-                    break;
-                case "255,000,000":
-                    tmpOneRow = "#E6E6E6"; //color GREY
-                    break;
-                case "000,000,000":
-                    tmpOneRow = "#FFFFFFFF"; //color WHITE
-                    break;
-                default:
-                    tmpOneRow = "#FFFFFFFF"; //color WHITE
+                Log.i("laczenie", "Data2: " + tmpOneRow);
+                ListWithCellColor.add(tmpOneRow);
             }
-
-                    Log.i("laczenie", "Data2: " + tmpOneRow);
-                    ListWithCellColor.add(tmpOneRow);
-            }
+        } catch(Exception e){
+            Log.i("laczenie", "exception " + e.toString());
+        }
             return ListWithCellColor;
         }
 }
