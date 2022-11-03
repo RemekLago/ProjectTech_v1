@@ -1,18 +1,16 @@
 package v1.projectTech;
 
-import static v1.projectTech.MainActivity2.temp3;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity4 extends AppCompatActivity {
+public class MainActivity4 extends AppCompatActivity implements RecyclerViewInterface{
 
     DBTest3 dbtest3 = new DBTest3();
     ArrayList<ArrayList> temp3 = dbtest3.doInBackground();
@@ -24,6 +22,8 @@ public class MainActivity4 extends AppCompatActivity {
     ArrayList<Integer> FinalListWithColumnsAdjust = dbtest3.columnsAdjust(temp3);
     ArrayList<String> FinalListWithCellsColor = dbtest3.cellsColor(temp3);
     ArrayList<ArrayList> data1;
+
+
 
     ArrayList<ArrayList> addingNamesOfColumns() {
 
@@ -95,7 +95,7 @@ public class MainActivity4 extends AppCompatActivity {
 
         RecyclerView recyclerView1 = findViewById(R.id.recyclerView1);
 
-        AdapterRecyclerView adapterRecyclerView = new AdapterRecyclerView(this,data1);
+        AdapterRecyclerView adapterRecyclerView = new AdapterRecyclerView(this,data1, this);
         recyclerView1.setAdapter(adapterRecyclerView);
         recyclerView1.setLayoutManager(new LinearLayoutManager(this));
 //
@@ -119,4 +119,8 @@ public class MainActivity4 extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onItemClick(int position) {
+        Toast.makeText(getApplicationContext(), "Position: " + position, Toast.LENGTH_LONG).show();
+    }
 }

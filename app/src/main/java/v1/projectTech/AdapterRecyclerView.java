@@ -21,6 +21,8 @@ import java.util.ArrayList;
 
 public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerView.ViewHolderRecyclerView> {
 
+    private final RecyclerViewInterface recyclerViewInterface;
+
 //    ArrayList<ArrayList> temp3 = dbtest3.doInBackground();
     ArrayList<Integer> FinalListWithColumnsWidth = dbtest3.columnsWidth(temp3);
     ArrayList<Integer> FinalListWithColumnsAdjust = dbtest3.columnsAdjust(temp3);
@@ -30,9 +32,10 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
     int position1;
     Context context;
     ArrayList<ArrayList> data1;
-    public AdapterRecyclerView(Context context1, ArrayList<ArrayList> dataIn){
-        context = context1;
-        data1 = dataIn;
+    public AdapterRecyclerView(Context context1, ArrayList<ArrayList> dataIn, RecyclerViewInterface recyclerViewInterface){
+        this.context = context1;
+        this.data1 = dataIn;
+        this.recyclerViewInterface = recyclerViewInterface;
     }
 
     @NonNull
@@ -40,7 +43,7 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
     public AdapterRecyclerView.ViewHolderRecyclerView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.linear_layout_row2, parent, false);
-        return new ViewHolderRecyclerView(view);
+        return new ViewHolderRecyclerView(view, recyclerViewInterface);
 
     }
 
@@ -99,7 +102,7 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
         TextView textView14;
         TextView textView15;
 
-        public ViewHolderRecyclerView(@NonNull View itemView) {
+        public ViewHolderRecyclerView(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
 
 
@@ -119,7 +122,18 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
             textView8 = itemView.findViewById(R.id.textView14);
             textView8 = itemView.findViewById(R.id.textView15);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (recyclerViewInterface != null) {
+                        int position = getAdapterPosition();
 
+                        if (position != RecyclerView.NO_POSITION){
+                            recyclerViewInterface.onItemClick(position);
+                        }
+                    }
+                }
+            });
 
             try {
                 int i = position1 +1;
