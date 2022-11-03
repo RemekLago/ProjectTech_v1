@@ -1,8 +1,5 @@
-package v1.projectTech;
+package v1.projectTech.Pobieranie_danych_z_bazy;
 
-
-import static v1.projectTech.DBTest3.tmpInfo;
-import static v1.projectTech.R.id.button1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,14 +7,12 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.ViewAnimator;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import v1.projectTech.BuildConfig;
+import v1.projectTech.Czytanie_Etykiety.MainActivity_Etykieta;
+import v1.projectTech.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -83,6 +78,14 @@ public class MainActivity extends AppCompatActivity {
                 openMainActivity4();
             }
         });
+
+        Button button4 = findViewById(R.id.button4);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openMainActivity_Etykieta();
+            }
+        });
     }
     private void openMainActivity2() {
         Intent intent = new Intent(this, MainActivity2.class);
@@ -96,6 +99,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void openMainActivity4() {
         Intent intent = new Intent(this, MainActivity4.class);
+        startActivity(intent);
+    }
+
+    private void openMainActivity_Etykieta() {
+        Intent intent = new Intent(this, MainActivity_Etykieta.class);
         startActivity(intent);
     }
 }

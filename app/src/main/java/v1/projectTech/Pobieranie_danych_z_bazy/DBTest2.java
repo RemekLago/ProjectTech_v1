@@ -1,18 +1,11 @@
-package v1.projectTech;
+package v1.projectTech.Pobieranie_danych_z_bazy;
 
-import static android.provider.ContactsContract.CommonDataKinds.Website.URL;
-
-import android.annotation.SuppressLint;
 import android.os.AsyncTask;
-import android.os.StrictMode;
 import android.util.Log;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.sql.Types;
 import java.util.ArrayList;
 
 public class DBTest2 extends AsyncTask<String, Void, ArrayList<ArrayList>> {

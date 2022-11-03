@@ -1,4 +1,4 @@
-package v1.projectTech;
+package v1.projectTech.Pobieranie_danych_z_bazy;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,6 +9,8 @@ import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import v1.projectTech.R;
 
 public class MainActivity4 extends AppCompatActivity implements RecyclerViewInterface{
 

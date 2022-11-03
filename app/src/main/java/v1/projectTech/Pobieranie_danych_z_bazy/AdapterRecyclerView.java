@@ -1,11 +1,10 @@
-package v1.projectTech;
+package v1.projectTech.Pobieranie_danych_z_bazy;
 
-import static v1.projectTech.MainActivity2.dbtest3;
-import static v1.projectTech.MainActivity2.temp3;
+import static v1.projectTech.Pobieranie_danych_z_bazy.MainActivity2.dbtest3;
+import static v1.projectTech.Pobieranie_danych_z_bazy.MainActivity2.temp3;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.Layout;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -13,11 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import v1.projectTech.R;
 
 public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerView.ViewHolderRecyclerView> {
 

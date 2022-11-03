@@ -1,14 +1,14 @@
-package v1.projectTech;
+package v1.projectTech.Pobieranie_danych_z_bazy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TableLayout;
 import android.widget.TextView;
+
+import v1.projectTech.R;
 
 public class MainActivity3 extends AppCompatActivity {
 

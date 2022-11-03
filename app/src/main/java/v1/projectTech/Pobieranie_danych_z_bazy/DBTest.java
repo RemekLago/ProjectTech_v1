@@ -1,4 +1,4 @@
-package v1.projectTech;
+package v1.projectTech.Pobieranie_danych_z_bazy;
 
 import android.os.AsyncTask;
 import android.util.Log;

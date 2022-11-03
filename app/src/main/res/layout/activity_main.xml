@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/layout1"
-    tools:context=".MainActivity">
+    tools:context=".Pobieranie_danych_z_bazy.MainActivity">
 
 
     <TextView
@@ -124,6 +124,16 @@
         android:layout_marginStart="228dp"
         android:layout_marginTop="144dp"
         android:text="MainActivity_4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="188dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:text="Czytanie Etykiety"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 

@@ -1,9 +1,6 @@
-package v1.projectTech;
-
-import static v1.projectTech.InformacjaOLokalizacji.numberOfColumns;
+package v1.projectTech.Pobieranie_danych_z_bazy;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
@@ -12,6 +9,8 @@ import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.ArrayList;
+
+import v1.projectTech.R;
 
 public class MainActivity2 extends AppCompatActivity {
 
