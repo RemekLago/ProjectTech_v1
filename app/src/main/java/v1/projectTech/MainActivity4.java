@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -28,16 +29,18 @@ public class MainActivity4 extends AppCompatActivity {
 
     for (int i = 0; i < FinalListWithColumnsNames.size(); i ++) {
         FinalListWithColumnsData.get(0).set(i, FinalListWithColumnsNames.get(i));
+        Log.i("laczenie", "method-addingNamesOfColumns1: " + FinalListWithColumnsData.get(0).get(i));
+        Log.i("laczenie", "method-addingNamesOfColumns2: " + FinalListWithColumnsData.get(0).set(i, FinalListWithColumnsNames.get(i)));
     }
 
     return FinalListWithColumnsData;
     }
 
     ArrayList<ArrayList> addingColorOfColumns(ArrayList<ArrayList> data) {
-        for (int i = 0; i < data.size()-1; i++) {
-            data.get(i).set(0, FinalListWithCellsColor.get(i));
-//            Log.i("laczenie", "dlugosc lista kolory " + FinalListWithCellsColor.get(i));
-//            Log.i("laczenie", "dlugosc lista kolory " +  data.get(i).get(0));
+        for (int i = 1; i < data.size(); i++) {
+            data.get(i).set(0, FinalListWithCellsColor.get(i-1));
+            Log.i("laczenie", "method-addingColorOfColumns1: " + data.get(i).get(0));
+            Log.i("laczenie", "method-addingColorOfColumns2: " + data.get(i).set(0, FinalListWithCellsColor.get(i-1)));
         }
         return FinalListWithColumnsData;
     }
@@ -95,28 +98,25 @@ public class MainActivity4 extends AppCompatActivity {
         AdapterRecyclerView adapterRecyclerView = new AdapterRecyclerView(this,data1);
         recyclerView1.setAdapter(adapterRecyclerView);
         recyclerView1.setLayoutManager(new LinearLayoutManager(this));
-
-
+//
+//
+//        //            textView1.setBackgroundColor(Color.parseColor((data1.get(position).get(0).toString()));
+//        textView2.setBackgroundColor(Color.parseColor(data1.get().get(0).toString()));
+//
+//        textView3.setBackgroundColor(Color.parseColor((data1.get(0).get(0).toString())));
+////                textView4.setBackgroundColor(Color.parseColor((data1.get(position).get(0).toString())));
+////                textView5.setBackgroundColor(Color.parseColor((data1.get(position).get(0).toString())));
+////                textView6.setBackgroundColor(Color.parseColor((data1.get(position).get(0).toString())));
+////                textView7.setBackgroundColor(Color.parseColor((data1.get(position).get(0).toString())));
+////                textView8.setBackgroundColor(Color.parseColor((data1.get(position).get(0).toString())));
+////                textView9.setBackgroundColor(Color.parseColor((data1.get(position).get(0).toString())));
+////                textView10.setBackgroundColor(Color.parseColor((data1.get(position).get(0).toString())));
+////                textView11.setBackgroundColor(Color.parseColor((data1.get(position).get(0).toString())));
+////                textView12.setBackgroundColor(Color.parseColor((data1.get(position).get(0).toString())));
+////                textView13.setBackgroundColor(Color.parseColor((data1.get(position).get(0).toString())));
+////                textView14.setBackgroundColor(Color.parseColor((data1.get(position).get(0).toString())));
+////                textView14.setBackgroundColor(Color.parseColor((data1.get(position).get(0).toString())));
 
     }
-
-
-//    public void createOneRow() {
-////        int tmpNumberOfColumns = InformacjaOLokalizacji.numberOfColumns;
-//
-//        LinearLayout linearLayoutRowIn = findViewById(R.id.linear);//find the linear layout
-////        linearLayoutRowIn.removeAllViews();   //add this too
-//
-//        for (int i = 0; i < 5; i++) {                                                        //looping to create 5 textviews
-//
-//            TextView textView = new TextView(this);                                   //dynamically create textview
-//            textView.set
-//            textView.setLayoutParams(new LinearLayout.LayoutParams(             //select linearlayoutparam- set the width & height
-//                    ViewGroup.LayoutParams.WRAP_CONTENT, 40));
-//            textView.setGravity(Gravity.FILL_VERTICAL);                       //set the gravity
-//            textView.setText("Textview: " + i);                                    //adding text
-//            linearLayoutRowIn.addView(textView);           //inflating :)
-//        }
-//    }
 
 }

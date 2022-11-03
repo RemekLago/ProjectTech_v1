@@ -8,20 +8,22 @@
 
         <!--            row1-->
 
-<!--                <TextView-->
-<!--                    android:id="@+id/textView1"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:padding="4dp"-->
-<!--                    android:background="@drawable/ramkatextview"-->
-
-<!--                    android:text="TextView" />-->
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="fill"
+                    android:layout_weight="1"
+                    android:padding="4dp"
+                    android:background="@drawable/ramkatextview"
+                    android:width="70dp"
+                    android:text="TextView" />
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="fill"
                     android:layout_weight="1"
                     android:padding="4dp"
                     android:background="@drawable/ramkatextview"
@@ -32,6 +34,7 @@
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="fill"
                     android:layout_weight="1"
                     android:padding="4dp"
                     android:background="@drawable/ramkatextview"
@@ -125,7 +128,7 @@
                     android:layout_weight="1"
                     android:padding="4dp"
                     android:background="@drawable/ramkatextview"
-                    android:width="10dp"
+
                     android:text="TextView" />
 
                 <TextView
@@ -135,7 +138,7 @@
                     android:layout_weight="1"
                     android:padding="4dp"
                     android:background="@drawable/ramkatextview"
-                    android:width="10dp"
+
                     android:text="TextView" />
 
                 <TextView
@@ -145,7 +148,7 @@
                     android:layout_weight="1"
                     android:padding="4dp"
                     android:background="@drawable/ramkatextview"
-                    android:width="10dp"
+
                     android:text="TextView" />
 
                 <TextView
