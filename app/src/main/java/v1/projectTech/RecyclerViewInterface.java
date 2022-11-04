@@ -1,6 +1,7 @@
-package v1.projectTech.Pobieranie_danych_z_bazy;
+package v1.projectTech;
 
 public interface RecyclerViewInterface {
 
     void onItemClick(int position);
+
 }

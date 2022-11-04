@@ -5,7 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@+id/layout3"
-    tools:context=".Pobieranie_danych_z_bazy.MainActivity3"
+    tools:context=".MainActivity3"
     android:orientation="horizontal">
 
 

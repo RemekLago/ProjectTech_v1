@@ -1,5 +1,7 @@
-package v1.projectTech.Pobieranie_danych_z_bazy;
+package v1.projectTech;
 
+
+import static v1.projectTech.Pass.URL;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,12 +9,12 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-import v1.projectTech.BuildConfig;
-import v1.projectTech.Czytanie_Etykiety.MainActivity_Etykieta;
-import v1.projectTech.R;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,27 +34,25 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-//        DBTest dbtest = new DBTest();
-//        ArrayList<ArrayList> temp = dbtest.doInBackground();
-//
-//        Log.i("laczenie", "url adress: " + URL);
-//
-//        TextView textView1 = findViewById(R.id.textView1);
-//        TextView textView2 = findViewById(R.id.textView2);
-//
-//        textView1.setText((CharSequence) temp.get(0).get(0));
-//        textView2.setText((CharSequence) temp.get(1).get(0));
-//
-//        DBTest2 dbtest2 = new DBTest2();
-//        ArrayList<ArrayList> temp2 = dbtest2.doInBackground();
-//
-//        Log.i("laczenie", "url adress: " + URL);
-//
-//        TextView textView3 = findViewById(R.id.textView3);
-//        TextView textView4 = findViewById(R.id.textView4);
-//
-//        textView3.setText((CharSequence) temp2.get(0).get(0));
-//        textView4.setText((CharSequence) temp2.get(1).get(0));
+        DBTest dbtest = new DBTest();
+        ArrayList<ArrayList> temp = dbtest.doInBackground();
+
+        Log.i("laczenie", "url adress: " + URL);
+
+        TextView textView1 = findViewById(R.id.textView1);
+        TextView textView2 = findViewById(R.id.textView2);
+
+        textView1.setText((CharSequence) temp.get(0).get(0));
+        textView2.setText((CharSequence) temp.get(1).get(0));
+
+        DBTest2 dbtest2 = new DBTest2();
+        ArrayList<ArrayList> temp2 = dbtest2.doInBackground();
+
+        Log.i("laczenie", "url adress: " + URL);
+
+        TextView textView3 = findViewById(R.id.textView3);
+        TextView textView4 = findViewById(R.id.textView4);
+
 
         Button button1 = findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -79,13 +79,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button button4 = findViewById(R.id.button4);
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openMainActivity_Etykieta();
-            }
-        });
+//        Button button4 = findViewById(R.id.button4);
+//        button4.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                openMainActivity_Etykieta();
+//            }
+//        });
     }
     private void openMainActivity2() {
         Intent intent = new Intent(this, MainActivity2.class);
@@ -102,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void openMainActivity_Etykieta() {
-        Intent intent = new Intent(this, MainActivity_Etykieta.class);
-        startActivity(intent);
-    }
+//    private void openMainActivity_Etykieta() {
+//        Intent intent = new Intent(this, MainActivity_Etykieta.class);
+//        startActivity(intent);
+//    }
 }

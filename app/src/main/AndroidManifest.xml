@@ -17,43 +17,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectTech_v1"
         tools:targetApi="31">
+
         <activity
-            android:name=".MainActivity_Table"
+            android:name=".MainActivity4"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Czytanie_Etykiety.MainActivity_Etykieta"
+            android:name=".MainActivity3"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Pobieranie_danych_z_bazy.MainActivity4"
+            android:name=".MainActivity2"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Pobieranie_danych_z_bazy.MainActivity3"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Pobieranie_danych_z_bazy.MainActivity2"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Pobieranie_danych_z_bazy.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

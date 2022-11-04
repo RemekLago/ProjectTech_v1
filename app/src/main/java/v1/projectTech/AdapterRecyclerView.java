@@ -1,7 +1,7 @@
-package v1.projectTech.Pobieranie_danych_z_bazy;
+package v1.projectTech;
 
-import static v1.projectTech.Pobieranie_danych_z_bazy.MainActivity2.dbtest3;
-import static v1.projectTech.Pobieranie_danych_z_bazy.MainActivity2.temp3;
+import static v1.projectTech.MainActivity2.dbtest3;
+import static v1.projectTech.MainActivity2.temp3;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -17,13 +17,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import v1.projectTech.R;
-
 public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerView.ViewHolderRecyclerView> {
 
     private final RecyclerViewInterface recyclerViewInterface;
 
-//    ArrayList<ArrayList> temp3 = dbtest3.doInBackground();
+        ArrayList<ArrayList> temp3 = dbtest3.doInBackground();
     ArrayList<Integer> FinalListWithColumnsWidth = dbtest3.columnsWidth(temp3);
     ArrayList<Integer> FinalListWithColumnsAdjust = dbtest3.columnsAdjust(temp3);
     ArrayList<String> FinalListWithCellsColor = dbtest3.cellsColor(temp3);

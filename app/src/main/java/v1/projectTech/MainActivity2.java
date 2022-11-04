@@ -1,4 +1,4 @@
-package v1.projectTech.Pobieranie_danych_z_bazy;
+package v1.projectTech;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,8 +9,6 @@ import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.ArrayList;
-
-import v1.projectTech.R;
 
 public class MainActivity2 extends AppCompatActivity {
 

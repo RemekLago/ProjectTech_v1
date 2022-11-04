@@ -1,6 +1,6 @@
-package v1.projectTech.Pobieranie_danych_z_bazy;
-import static v1.projectTech.Pobieranie_danych_z_bazy.InformacjaOLokalizacji.numberOfColumns;
-import static v1.projectTech.Pobieranie_danych_z_bazy.InformacjeOPozycji.rStatus;
+package v1.projectTech;
+import static v1.projectTech.InformacjaOLokalizacji.numberOfColumns;
+import static v1.projectTech.InformacjeOPozycji.rStatus;
 
 import android.os.AsyncTask;
 import android.util.Log;

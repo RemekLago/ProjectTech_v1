@@ -1,4 +1,4 @@
-package v1.projectTech.Pobieranie_danych_z_bazy;
+package v1.projectTech;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,8 +9,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-
-import v1.projectTech.R;
 
 public class MainActivity4 extends AppCompatActivity implements RecyclerViewInterface{
 
@@ -29,13 +27,13 @@ public class MainActivity4 extends AppCompatActivity implements RecyclerViewInte
 
     ArrayList<ArrayList> addingNamesOfColumns() {
 
-    for (int i = 0; i < FinalListWithColumnsNames.size(); i ++) {
-        FinalListWithColumnsData.get(0).set(i, FinalListWithColumnsNames.get(i));
-        Log.i("laczenie", "method-addingNamesOfColumns1: " + FinalListWithColumnsData.get(0).get(i));
-        Log.i("laczenie", "method-addingNamesOfColumns2: " + FinalListWithColumnsData.get(0).set(i, FinalListWithColumnsNames.get(i)));
-    }
+        for (int i = 0; i < FinalListWithColumnsNames.size(); i ++) {
+            FinalListWithColumnsData.get(0).set(i, FinalListWithColumnsNames.get(i));
+            Log.i("laczenie", "method-addingNamesOfColumns1: " + FinalListWithColumnsData.get(0).get(i));
+            Log.i("laczenie", "method-addingNamesOfColumns2: " + FinalListWithColumnsData.get(0).set(i, FinalListWithColumnsNames.get(i)));
+        }
 
-    return FinalListWithColumnsData;
+        return FinalListWithColumnsData;
     }
 
     ArrayList<ArrayList> addingColorOfColumns(ArrayList<ArrayList> data) {
@@ -60,7 +58,7 @@ public class MainActivity4 extends AppCompatActivity implements RecyclerViewInte
 //        data1 = new ArrayList<>();
 //        data1 = FinalListWithColumnsDataWithMainNames;
         ArrayList<ArrayList> data0 = addingNamesOfColumns();
-            data1 =         addingColorOfColumns(data0);
+        data1 =         addingColorOfColumns(data0);
 
 //        ArrayList<String> row1 = new ArrayList<>();
 //        row1.add(0, "Ewa1");

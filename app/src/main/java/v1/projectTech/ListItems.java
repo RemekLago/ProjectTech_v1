@@ -1,4 +1,4 @@
-package v1.projectTech.Pobieranie_danych_z_bazy;
+package v1.projectTech;
 
 public class ListItems {
         private String item1, item2, item3, item4, item5, item6, item7, item8, item9;

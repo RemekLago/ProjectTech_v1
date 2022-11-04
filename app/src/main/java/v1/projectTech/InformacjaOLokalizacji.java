@@ -1,6 +1,6 @@
-package v1.projectTech.Pobieranie_danych_z_bazy;
+package v1.projectTech;
 
-import static v1.projectTech.Pobieranie_danych_z_bazy.DBTest3.tmpInfo;
+import static v1.projectTech.DBTest3.tmpInfo;
 import android.util.Log;
 import java.sql.CallableStatement;
 import java.sql.Connection;
