@@ -45,6 +45,8 @@ public class InformacjaOLokalizacji {
             callableStatement.setInt("UserId", Integer.valueOf(UserID));
             callableStatement.setString("Pozycja", Pozycja);
 
+            Log.i("laczenie", "Pozycja: " + Pozycja);
+
             ResultSet rs = callableStatement.executeQuery();
 
             //pobieranie metadanych o tabeli, szukanie ile jest kolumn w tabeli
